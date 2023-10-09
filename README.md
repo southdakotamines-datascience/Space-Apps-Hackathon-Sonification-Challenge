@@ -61,9 +61,6 @@ This project was conceived to devise a methodology to sonify 3D NASA space datas
 
 We have laid down a foundation for anyone to experience space in a new, immersive way. We encourage further development to cater to both scientific and creative needs, leveraging the modularity of our solution for continuous innovation.
 
-## License
-
-This project is available on GitHub under [insert license name] license.
 
 ---
 
