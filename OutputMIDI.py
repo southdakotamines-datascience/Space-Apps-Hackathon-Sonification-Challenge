@@ -55,7 +55,7 @@ class OutputMIDI:
         amplitude_scaling_factor = 80 # midi amplitude scaling factor
         return int(base_amplitude + amplitude_scaling_factor * amplitude)
     
-    def Output(self, track_num=0, track_name="Default Track", channel=0, tempo=120, instrument=1, separate=False, randomize=False):
+    def Output(self, track_num=0, track_name="Default Track", channel=0, tempo=120, instrument=1, separate=True, randomize=False):
         '''
         
         Output the music for the provided segment data to a MIDI output file.
