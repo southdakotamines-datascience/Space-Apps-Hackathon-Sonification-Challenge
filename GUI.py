@@ -30,12 +30,13 @@ def run_sam_generator(input_path, from_value, to_value):
     Sam = SamGenerator()
     Sam.generate(input_path)
     sonified_json = sonify("test.txt")
-    midi = OutputMIDI(sonified_json, generate_incremented_filename("MIDI")+".mid")
+    midi = OutputMIDI(sonified_json, generate_incremented_filename("MIDI") + ".mid")
     midi.Output()
 
     # Close the loading window
     loading_window.hide()
     window.un_hide()
+
 
 def generate_incremented_filename(base_filename):
     # Check if the file already exists
@@ -47,6 +48,8 @@ def generate_incremented_filename(base_filename):
         filename = f"{base_filename}_{count}"
 
     return filename
+
+
 while True:
 
     event, values = window.read()
