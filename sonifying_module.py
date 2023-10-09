@@ -21,10 +21,6 @@ def get_segments(filename: str) -> list:
     return segments
 
 
-def strip_newlines(input_string):
-    return re.sub(r'\r?\n', '', input_string)
-
-
 def get_size_stats(segments: list) -> (float, float, float):
     """
         Author: Sherwyn Braganza
@@ -192,14 +188,14 @@ def sonify(filename: str):
     flythrough = get_segments(filename)
     mean, std, median = get_size_stats(flythrough)
     for frame in (flythrough):
-        amp, freq, midi, midi_amp = get_frequency(frame['segment'],                                                  median)
+        amp, freq, midi, midi_amp = get_frequency(frame['segment'], median)
         frame['segment'].update({'amplitude': amp, 'frequency': freq,
                                                 'midi': midi, 'midi_amp': midi_amp})
 
     with open('sonified_' + filename, 'w') as ofile:
         json.dump(flythrough, ofile)
 
-    return 'sonified_' + filename + ".json"
+    return 'sonified_' + filename
 
 
 if __name__ == '__main__':
